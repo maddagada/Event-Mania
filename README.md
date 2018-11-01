@@ -1,4 +1,4 @@
-# `event-mania` — Popular for renting wedding, parties & events supplies
+# `Event-Mania` — Popular for renting wedding, parties & events supplies
 
 **Event-Mania** is an web application for event managing and renting a wedding, parties and events supplies.You can quickly look at the photos of the events we organized previously from the gallery. If you are intrested in our work you can directly contact us through email or phone call to make a deal to organize/event manage any type of events. Also, you can get the quote of the rental item by submitting a online form describing the party supplies that you are intrested in and know the how many pieces are available per item and will get back to you less than 24hrs.
 
