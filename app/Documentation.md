@@ -1,12 +1,12 @@
 # User Stories
 
- 1. As a User I would like to view the images of the previously organized events, so I can see their work quality and type of events they organized so far.
+ 1. As a User I want to view the work of their previously organized events, so I can see their work quality and type of events they organized so far.
  
  ###### Acceptance Criteria:
     
     I can see the pictures of the previous events
 
- 2. As a User I would like to contact them through the mobile number provided, so I can discuss any details that I am willing to know over the phone.
+ 2. As a User I want to contact them through the mobile, so I can discuss any details that I am willing to know over the phone.
  
   ###### Acceptance Criteria:
   
@@ -14,7 +14,7 @@
      
      I can see an email address
   
- 3. As a User I would like to know what all the party supplies they have, so I can contact them based on availability of item.
+ 3. As a User I want to know what all the rental party supplies they have, so I can contact them based on availability of item.
  
   ###### Acceptance Criteria:
   
@@ -24,7 +24,7 @@
      
      I can see the price of the item per day
      
- 4. As a User I would like to know the number of pieces available per item and rental supplies delivery options, so I can decide on renting an item with them
+ 4. As a User I want to know the number of pieces available per item and items delivery options, so I can decide on renting an item with them
  
   ###### Acceptance Criteria:
   
@@ -32,9 +32,13 @@
      
      Upon the RENT button click, I can able to see a form to get quote of items that I am interested in.
      
+ 5. As a User I want to know the item quote form submission is success, so I can be sure that I will hear back from them.
+ 
+  ###### Acceptance Criteria:
+     
      I can able to see the confirmation message received to the Gmail-id given in the form. 
      
- 5. As a User I would like to make a quick search of a party item, so I will know the availability of specific item
+ 6. As a User I want to make a quick search of a party item, so I can know the availability of specific item
  
   ###### Acceptance Criteria:
   
