@@ -1,10 +1,11 @@
 # `event-mania` — Popular for wedding, parties & events rental items
 
-**Event-Mania** is an web application for event managing and renting a wedding, parties and events supplies.You can quickly look at the events we organized previously from the gallery photos. If you are intrested in our work you can quickly contact us through email or phone call to organize/event manage any type of events. Also, you can get the quote of the rental item that you are intrested in to know the how many pieces are available per item and will get back to you less than 24hrs. 
+**Event-Mania** is an web application for event managing and renting a wedding, parties and events supplies.You can quickly look at the photos of the events we organized previously from the gallery. If you are intrested in our work you can directly contact us through email or phone call to make a deal to organize/event manage any type of events. Also, you can get the quote of the rental item by submitting a online form describing the party supplies that you are intrested in and know the how many pieces are available per item and will get back to you less than 24hrs.
 
 ## Getting Started
 
-To get you started you can simply clone the `event-mania` repository and install the dependencies 
+To get you started you can simply clone the `event-mania` repository and install the dependencies.
+
 Clone the `event-mania` repository using git:
 
 ```
@@ -47,17 +48,3 @@ This software is licensed by the author under MIT License.
 This software is free of charge and I hereby granted permission any person can obtain a copy of this software and without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-
-## References
-
-For more information on the tools and technologies 
-
-[angularjs]: https://angularjs.org/
-[git]: https://git-scm.com/
-[http-server]: https://github.com/indexzero/http-server
-[jdk]: https://wikipedia.org/wiki/Java_Development_Kit
-[jdk-download]: http://www.oracle.com/technetwork/java/javase/downloads
-[node]: https://nodejs.org/
-[npm]: https://www.npmjs.org/
-"#Event-Mania" 
