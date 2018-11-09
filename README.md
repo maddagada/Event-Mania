@@ -1,4 +1,4 @@
-# `event-mania` — Popular for wedding, parties & events rental items
+# `Event-Mania` — Popular for renting wedding, parties & events supplies
 
 **Event-Mania** is an web application for event managing and renting a wedding, parties and events supplies.You can quickly look at the photos of the events we organized previously from the gallery. If you are intrested in our work you can directly contact us through email or phone call to make a deal to organize/event manage any type of events. Also, you can get the quote of the rental item by submitting a online form describing the party supplies that you are intrested in and know the how many pieces are available per item and will get back to you less than 24hrs.
 
@@ -16,13 +16,13 @@ cd event-mania
 ### Installations
 
 We also use a number of Node.js tools to initialize `event-mania`. You must have Node.js
-and its package manager (npm) installed. You can download nodejs from [here][Nodejs].
+and its package manager (npm) installed. You can download nodejs from [here](https://nodejs.org/).
 
 Tools and AngularJS framework code are the two kinds of dependencies in this project. The tools
 help us manage and test the application.
 
-* We get the AngularJS code and the tools we depend upon via `npm`, the [Node package manager][npm].
-* To run end-to-end tests of this application, you must have the [Java Development Kit (JDK)][jdk] installed on your machine.
+* We get the AngularJS code and the tools we depend upon via `npm`, the [Node package manager](https://www.npmjs.org/).
+* To run end-to-end tests of this application, you must have the [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads) installed on your machine.
 * You must have the node package manager installed. It will download all the node module packages necessary for this project. Below is the command used to install npm.
 
 ```
@@ -37,7 +37,7 @@ The simplest way to start the server is:
 npm start
 ```
 
-Now browse to the app at [`localhost:8000`][local-app-url].
+Now browse to the app at `http://localhost:8000/`.
 
 ### License
 
