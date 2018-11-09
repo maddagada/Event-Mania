@@ -81,3 +81,49 @@
        Prepared statements with parametrized queries help in mitigating this attack 
    
        Applying the principle of least privilege security control help in minimizing the damage of attack.
+       
+# Diagrams
+
+ ## MockUp Diagrams
+ 
+ **Home Page Mock Up**
+ 
+ ![Home Page](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/HomePage_Mockup.PNG)
+ 
+ **Gallery Page Mock Up**
+ 
+ ![Gallery Page](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/GalleryPage_Mockup.PNG)
+ 
+ **Contact Us Page**
+ 
+ ![Contact Us](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/ContactUs_Mockup.PNG)
+ 
+ **Party Rental Items Page**
+ 
+ ![Party Rental](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/PartyRentalCategory_Mockup.PNG)
+ 
+ **Party Rental Individual Item Page**
+ 
+ ![Individual Item Page](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/PartyRental_AddtoCart.PNG)
+ 
+ **Review Cart**
+ 
+ ![Cart Page](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/ReviewCart.PNG)
+ 
+ **Quote Submission Page**
+ 
+ ![Quote](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/QuoteSubmissionPage.PNG)
+ 
+ ## Architecture Diagrams
+ 
+ **System Context Level**
+ 
+ ![System Context](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/System%20Contex%20Level%20Architecture.PNG)
+ 
+ **Container Context Level**
+ 
+ ![Container Context](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/Container%20Level%20Artchitecture.PNG)
+ 
+ **Component Level**
+ 
+ ![Component](https://github.com/maddagada/Event-Mania/blob/master/Architecture%20and%20Mockup%20Images/Component%20Level%20Architecture.PNG)
