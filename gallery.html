@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="example366">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Script Tutorials" />
+    <meta name="description" content="Photo Gallery with AngularJS and CSS3 - demo page">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- add styles -->
+    <link href="gallerycss.css" rel="stylesheet" type="text/css" />
+    <!-- add javascripts -->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0rc1/angular.js"></script>
+    <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="templatecss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="templatejs.js"></script>
+    <script>
+	'use strict';
+angular.module('example366', ['ngAnimate', 'ngTouch'])
+  .controller('MainCtrl', function ($scope) {
+    // Set of Photos
+    $scope.photos = [
+        {src: 'c1.jpg', desc: 'Image 01'},
+        {src: 'c2.jpg', desc: 'Image 02'},
+        {src: 'c3.jpg', desc: 'Image 03'},
+        {src: 'c4.jpg', desc: 'Image 04'},
+        {src: 'c5.jpg', desc: 'Image 05'},
+        {src: 'c2.jpg', desc: 'Image 06'}
+    ];
+    // initial image index
+    $scope._Index = 0;
+    // if a current image is the same as requested image
+    $scope.isActive = function (index) {
+        return $scope._Index === index;
+    };
+    // show prev image
+    $scope.showPrev = function () {
+        $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.photos.length - 1;
+    };
+    // show next image
+    $scope.showNext = function () {
+        $scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
+    };
+    // show a certain image
+    $scope.showPhoto = function (index) {
+        $scope._Index = index;
+    };
+});
+	</script>
+</head>
+<body ng-controller="MainCtrl">
+<div>
+
+</div>
+    <main id="cd-main-content">
+	<section id="cd-intro">
+
+    <!-- slider container -->
+    <div class="container slider">
+        <!-- enumerate all photos -->
+        <img ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.src}}" />
+        <!-- prev / next controls -->
+        <a class="arrow prev" href="#" ng-click="showPrev()"></a>
+        <a class="arrow next" href="#" ng-click="showNext()"></a>
+        <!-- extra navigation controls -->
+        <ul class="nav">
+            <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+                <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
+            </li>
+        </ul>
+    </div>
+	<header class="cd-header">
+		<!-- https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/bg-img.jpg-->
+			<div id="cd-logo"><a href="#0"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-logo_2.svg" alt="Logo"></a></div>
+			<a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+		</header>
+		<div class="cd-blurred-bg"></div>
+	</section> <!-- cd-intro -->
+</main>
+<div class="cd-shadow-layer"></div>
+
+<nav id="main-nav">
+	<ul>
+		<li><a href=""><span>Gallery</span></a></li>
+		<li><a href="#0"><span>Products</span></a></li>
+		<li><a href="#0"><span>Labs</span></a></li>
+		<li><a href="#0"><span>About</span></a></li>
+		<li><a href="contact.html"><span>Contact us</span></a></li>
+	</ul>
+	<a href="#0" class="cd-close-menu">Close<span></span></a>
+</nav>
+</body>

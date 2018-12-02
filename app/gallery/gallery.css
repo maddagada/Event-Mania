@@ -5,11 +5,11 @@
   overflow: hidden;
 }
 #add-image {
-  margin-top: 10px;
+  margin-top:10px;
 }
 
 span.text-content {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
   display: table;
@@ -30,9 +30,9 @@ span.text-content span {
   vertical-align: middle;
 }
 .img-modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .thumbnail:hover span.text-content {

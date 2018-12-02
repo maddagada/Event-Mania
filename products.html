@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+Name: <input ng-model="urls[0]">
+First: <input ng-model="urls[1]">
+<ul class="catalog" >
+    <li ng-repeat="url in urls">
+      <img ng-src="url"/>
+    </li>
+</ul>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.urls = ["last","firt","test"];
+});
+</script>
+
+<p>Use the ng-model directive to bind the value of the input field to a property made in the controller.</p>
+
+</body>
+</html>
