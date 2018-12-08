@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-#from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -48,6 +48,12 @@ def home(request):
    """
    return render_to_response('ember/index.html',
                {}, RequestContext(request))
+def gallery(request):
+   """
+   Send requests to / to the ember.js clientside app
+   """
+   return render_to_response('ember/gallery.html',
+               {}, RequestContext(request))
 
 def xss_example(request):
   """
@@ -55,23 +61,27 @@ def xss_example(request):
   """
   return render_to_response('dumb-test-app/index.html',
               {}, RequestContext(request))
+class Gallery(APIView):
+
+    def get(self, request, *args, **kwargs):
+        return gallery(request)
 
 class Register(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
         # Login
-        username = request.POST.get('username') #you need to apply validators to these
+        username = request.data.get('username') #you need to apply validators to these
         print username
-        password = request.POST.get('password') #you need to apply validators to these
-        email = request.POST.get('email') #you need to apply validators to these
-        gender = request.POST.get('gender') #you need to apply validators to these
-        age = request.POST.get('age') #you need to apply validators to these
-        educationlevel = request.POST.get('educationlevel') #you need to apply validators to these
-        city = request.POST.get('city') #you need to apply validators to these
-        state = request.POST.get('state') #you need to apply validators to these
+        password = request.data.get('password') #you need to apply validators to these
+        email = request.data.get('email') #you need to apply validators to these
+        gender = request.data.get('gender') #you need to apply validators to these
+        age = request.data.get('age') #you need to apply validators to these
+        educationlevel = request.data.get('educationlevel') #you need to apply validators to these
+        city = request.data.get('city') #you need to apply validators to these
+        state = request.data.get('state') #you need to apply validators to these
 
-        print request.POST.get('username')
+        print request.data.get('username')
         if User.objects.filter(username=username).exists():
             return Response({'username': 'Username is taken.', 'status': 'error'})
         elif User.objects.filter(email=email).exists():
@@ -79,10 +89,11 @@ class Register(APIView):
 
         #especially before you pass them in here
         newuser = User.objects.create_user(email=email, username=username, password=password)
-        newprofile = Profile(user=newuser, gender=gender, age=age, educationlevel=educationlevel, city=city, state=state)
-        newprofile.save()
+        #/*newprofile = Profile(user=newuser, gender=gender, age=age, educationlevel=educationlevel, city=city, state=state)
+        #newprofile.save()
+        #return Response({'status': 'success', 'userid': newuser.id, 'profile': newprofile.id})*/
 
-        return Response({'status': 'success', 'userid': newuser.id, 'profile': newprofile.id})
+        return Response({'status': 'success', 'userid': newuser.id})
 
 class Session(APIView):
     permission_classes = (AllowAny,)

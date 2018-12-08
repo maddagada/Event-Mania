@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<h1>{{urls}}</h1>
+Name: <input ng-model="urls">
+First: <input ng-model="urls[1]">
+<ul class="catalog" >
+    <li ng-repeat="url in urls">
+      <img ng-src="url"/>
+    </li>
+</ul>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('myCtrl', function($scope, $http) {
+
+var url = 'http://192.168.99.100:32777/api/products';
+var xhr = createCORSRequest('GET', url);
+//$scope.urls=xhr.send();
+
+$http({method: 'GET', url: 'https://cors-escape.herokuapp.com/http://192.168.99.100:32777/api/products', headers: {
+    'Access-Control-Allow-Origin': '*'}
+}).then(function(response){
+         $scope.urls="response[0]";
+    });
+
+    
+});
+
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+
+    // Check if the XMLHttpRequest object has a "withCredentials" property.
+    // "withCredentials" only exists on XMLHTTPRequest2 objects.
+    xhr.open(method, url, true);
+
+  } else if (typeof XDomainRequest != "undefined") {
+
+    // Otherwise, check if XDomainRequest.
+    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+
+  } else {
+
+    // Otherwise, CORS is not supported by the browser.
+    xhr = null;
+
+  }
+  return xhr;
+}
+</script>
+
+<p>Use the ng-model directive to bind the value of the input field to a property made in the controller.</p>
+
+</body>
+</html>

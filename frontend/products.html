@@ -4,7 +4,8 @@
 <body>
 
 <div ng-app="myApp" ng-controller="myCtrl">
-Name: <input ng-model="urls[0]">
+<h1>{{urls}}</h1>
+Name: <input ng-model="urls">
 First: <input ng-model="urls[1]">
 <ul class="catalog" >
     <li ng-repeat="url in urls">
@@ -15,8 +16,13 @@ First: <input ng-model="urls[1]">
 
 <script>
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-    $scope.urls = ["last","firt","test"];
+app.controller('myCtrl', function($scope, $http) {
+$scope.urls="test";
+$http.get('/api/products').then(function(response){
+         $scope.urls="response[0]";
+    });
+
+    
 });
 </script>
 
