@@ -1,10 +1,10 @@
 # User Stories
 
- 1. As a User I want to view the work of their previously organized events, so I can see their work quality and type of events they organized so far.
+ 1. As a User I want to view the pictures of their previously organized events in the gallery, so I can know the work quality and type of events they organized so far.
  
  ###### Acceptance Criteria:
     
-    I can see the pictures of the previous events
+    I can see the images of the previous events
 
  2. As a User I want to contact them through the mobile, so I can discuss any details that I am willing to know over the phone.
  
@@ -20,17 +20,17 @@
   
      I can see the party rental supplies by product 
      
-     I can see the images of the items
+     I can see the images of the items by product
      
      I can see the price of the item per day
      
- 4. As a User I want to know the number of pieces available per item and items delivery options, so I can decide on renting an item with them
+ 4. As a User I want to know the number of pieces available per item and items delivery options, so I can confirm on renting an item with them
  
   ###### Acceptance Criteria:
   
-     I can able to see RENT button below the image 
+     I can able to see Add to the cart option below the image 
      
-     Upon the RENT button click, I can able to see a form to get quote of items that I am interested in.
+     I can able to see the Get Quote option upon the RENT button click
      
  5. As a User I want to know the item quote form submission is success, so I can be sure that I will hear back from them.
  
@@ -38,14 +38,13 @@
      
      I can able to see the confirmation message received to the Gmail-id given in the form. 
      
- 6. As a User I want to make a quick search of a party item, so I can know the availability of specific item
+ 6. As a Admin I want to add an new party item to the product page or able to update the gallery page with the image of events organized , so I can maintain website with updated work
  
   ###### Acceptance Criteria:
   
-     I can able to see the search box
+     I can able to add/update the images in the gallery
      
-     I can able to search for the specific item
-
+     I can able to add/update rental items in the product page
 # MisUser Stories
 
 1. As a wicked user, I would like to perform Denial of service attack to make the page unavailable to the legitimate user
