@@ -21,3 +21,6 @@ class GalleryPageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = "contact.html"
+
+class ProductsPageView(TemplateView):
+    template_name = "ProductsInteraction.html"

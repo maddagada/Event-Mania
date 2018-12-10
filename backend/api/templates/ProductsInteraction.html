@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" class="no-js">
+{% load static%}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="/static/cart/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="/static/cart/css/style.css"> <!-- Resource style -->
+
+	<title>Add to Cart Interaction</title>
+	<script type="text/javascript">
+		jQuery.get('/api/products').then(function(events){
+			console.log(events)
+			events.forEach(function(event){
+				$('#this-is-bad').append("<br>");
+				$('#this-is-bad').append('<img width=100px height=100px src=\"/static/ember/c1.jpg\" />');
+				$('#this-is-bad').append('</br><p>Product id:' + event.pk + ' eventtype data below:' +'</p>');
+		$('#this-is-bad').append('<p>Product name:' + event.fields.name + ' eventtype data below:' +'</p>');
+				$('#this-is-bad').append('<a href="#0" class=\"cd-add-to-cart\" data-price=\"'+ event.price +'\">Add To Cart</a></br>');
+			});
+		});
+	</script>
+</head>
+<body>
+<main>
+	<div id='this-is-bad'>
+		<p>---------------------------ss---------------------------------------------------------------------------------</p>
+	</div>
+	<h6>Add to Cart Interaction</h6>
+	<a href="#0" class="cd-add-to-cart" data-price="25.99">Add To Cart</a>
+	<h1>Add to Cart Interaction</h1>
+	<a href="#0" class="cd-add-to-cart" data-price="22.99">Add To Cart2</a>
+</main>
+
+<div class="cd-cart-container empty">
+	<a href="#0" class="cd-cart-trigger">
+		Cart
+		<ul class="count"> <!-- cart items count -->
+			<li>0</li>
+			<li>0</li>
+		</ul> <!-- .count -->
+	</a>
+
+	<div class="cd-cart">
+		<div class="wrapper">
+			<header>
+				<h2>Cart</h2>
+				<span class="undo">Item removed. <a href="#0">Undo</a></span>
+			</header>
+
+			<div class="body">
+				<ul>
+					<!-- products added to the cart will be inserted here using JavaScript -->
+				</ul>
+			</div>
+
+			<footer>
+				<a href="#0" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart -->
+</div> <!-- cd-cart-container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+	if( !window.jQuery ) document.write('<script src="/static/cart/js/jquery-3.0.0.min.js"><\/script>');
+</script>
+<script src="/static/cart/js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

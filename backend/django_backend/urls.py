@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^gallery/', views.GalleryPageView.as_view(), name='gallery'),
     url(r'^home/', views.HomePageView.as_view(), name='home'),
     url(r'^about/', views.AboutPageView.as_view(), name='about'),
+    url(r'^productsview/', views.ProductsPageView.as_view(), name='about'),
     url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT})
 ]
 
