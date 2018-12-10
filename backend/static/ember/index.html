@@ -1,33 +1,23 @@
-<!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="backend/static/ember/templatecss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="/static/ember/templatejs.js"></script>
-</head>	
-<body>
-<main id="cd-main-content">
-	<section id="cd-intro">
-		<h1>Full Page Intro &amp; Navigation</h1>
-
-		<header class="cd-header">
-			<div id="cd-logo"><a href="#0"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-logo_2.svg" alt="Logo"></a></div>
-			<a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
-		</header>
-		<div class="cd-blurred-bg"></div>
-	</section> <!-- cd-intro -->
-</main>
-
-<div class="cd-shadow-layer"></div>
-
-<nav id="main-nav">
-	<ul>
-		<li><a href="contact.html"><span>Tour</span></a></li>
-		<li><a href="#0"><span>Pricing</span></a></li>
-		<li><a href="#0"><span>Labs</span></a></li>
-		<li><a href="#0"><span>About</span></a></li>
-		<li><a href="#0"><span>Contact us</span></a></li>
-	</ul>
-	<a href="#0" class="cd-close-menu">Close<span></span></a>
-</nav>
-</body>
+  <head>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript">
+      $.get('../api/products').then(function(events){
+        console.log(events)
+        events.forEach(function(event){
+          $('#this-is-bad').append("<br>");
+          $('#this-is-bad').append('<p>Product id:' + event.pk + ' eventtype data below:' +'</p>');
+		  $('#this-is-bad').append('<p>Product name:' + event.fields.name + ' eventtype data below:' +'</p>');
+          $('#this-is-bad').append("---------------------------------------------------<br>");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id='this-is-bad'>
+      <h5>This field loads in whatever data is available. This is bad. Every event loaded will be appended as a new div below this line.</h5>
+      <p>------------------------------------------------------------------------------------------------------------</p>
+    </div>
+	<a href="/admin">hello</a>
+  </body>
+</html>

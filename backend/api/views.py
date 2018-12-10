@@ -16,6 +16,8 @@ from django.views.generic import TemplateView # Import TemplateView
 class HomePageView(TemplateView):
     template_name = "home.html"
 
+class GalleryPageView(TemplateView):
+    template_name = "gallery.html"
 
 class AboutPageView(TemplateView):
-    template_name = "about.html"
+    template_name = "contact.html"
