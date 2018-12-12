@@ -34,6 +34,8 @@ class Product(models.Model):
     price = models.IntegerField()
     period = models.CharField(max_length=6, blank=False)
     color = models.CharField(max_length=10, blank=False)
+    category = models.CharField(max_length=10, default='chairs', blank=False)
+    imagesrc = models.CharField(max_length=50, default='/static/ember/c1.jpg', blank=False)
 
     def __str__(self):
         return str(self.name)

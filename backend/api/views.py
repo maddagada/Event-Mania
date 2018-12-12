@@ -24,3 +24,6 @@ class AboutPageView(TemplateView):
 
 class ProductsPageView(TemplateView):
     template_name = "ProductsInteraction.html"
+
+class CheckoutPageView(TemplateView):
+    template_name = "checkout.html"

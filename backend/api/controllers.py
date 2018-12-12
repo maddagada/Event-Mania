@@ -215,6 +215,50 @@ class ActivateIFTTT(APIView):
         print 'New Event Logged'
         return Response({'success': True}, status=status.HTTP_200_OK)
 
+class Chairs(APIView):
+    permission_classes = (AllowAny,)
+    parser_classes = (parsers.JSONParser,parsers.FormParser)
+    renderer_classes = (renderers.JSONRenderer, )
+
+    def get(self, request, format=None):
+        products = Product.objects.filter(category='chairs')
+        json_data = serializers.serialize('json', products)
+        content = {'products': json_data}
+        return HttpResponse(json_data, content_type='json')
+
+class Lenins(APIView):
+    permission_classes = (AllowAny,)
+    parser_classes = (parsers.JSONParser,parsers.FormParser)
+    renderer_classes = (renderers.JSONRenderer, )
+
+    def get(self, request, format=None):
+        products = Product.objects.filter(category='lenins')
+        json_data = serializers.serialize('json', products)
+        content = {'products': json_data}
+        return HttpResponse(json_data, content_type='json')
+
+class Tables(APIView):
+    permission_classes = (AllowAny,)
+    parser_classes = (parsers.JSONParser,parsers.FormParser)
+    renderer_classes = (renderers.JSONRenderer, )
+
+    def get(self, request, format=None):
+        products = Product.objects.filter(category='tables')
+        json_data = serializers.serialize('json', products)
+        content = {'products': json_data}
+        return HttpResponse(json_data, content_type='json')
+
+class Lights(APIView):
+    permission_classes = (AllowAny,)
+    parser_classes = (parsers.JSONParser,parsers.FormParser)
+    renderer_classes = (renderers.JSONRenderer, )
+
+    def get(self, request, format=None):
+        products = Product.objects.filter(category='lights')
+        json_data = serializers.serialize('json', products)
+        content = {'products': json_data}
+        return HttpResponse(json_data, content_type='json')
+
 class Products(APIView):
     permission_classes = (AllowAny,)
     parser_classes = (parsers.JSONParser,parsers.FormParser)
@@ -234,12 +278,17 @@ class Products(APIView):
         price = int(request.data.get('price'))
         period = request.data.get('period')
         color = request.data.get('color')
+        imagesrc = request.data.get('imagesrc')
+        category = request.data.get('category')
+
 
         newProduct = Product(
             name = name,
             price = price,
             period = period,
-            color = color
+            color = color,
+            category = category,
+            imagesrc = imagesrc
         )
 
         try:
