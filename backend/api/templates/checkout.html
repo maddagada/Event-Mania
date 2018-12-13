@@ -1,10 +1,21 @@
 
 <html>
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static '/ember/templatecss.css' %}">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="{% static '/ember/templatejs.js' %}"></script>
+<script>
+function validate()
+{
+  if(document.getElementById('fname').value == "")
+  {
+    alert("Please enter firstname.");
+    return;
+  }
+  alert('Please check your email for detailed quote.');
+}
+</script>
 <style>
 body {
   margin: 0;
@@ -41,33 +52,33 @@ body {
   <a class="active" href="{% url 'home' %}">Home</a>
   <a href="{% url 'gallery' %}">Gallery</a>
   <a href="{% url 'about' %}">Contact</a>
-  <a href="">Products</a>
+  <a href="{% url 'productsview' %}">Products</a>
 </div>
 <main id="cd-main" style="font-color=white;">
 </br></br></br></br></br>
 <table>
   <tr>
-    <td width="200px"> First Name </td>
+    <td width="200px"> First Name  *</td>
+    <td> <input id="fname" style="align:center;" /> </td>
+  </tr>
+  <tr>
+    <td width="200px"> Last Name * </td>
     <td> <input style="align:center;" /> </td>
   </tr>
   <tr>
-    <td width="200px"> Last Name </td>
+    <td width="200px"> Phone Number * </td>
     <td> <input style="align:center;" /> </td>
   </tr>
   <tr>
-    <td width="200px"> Phone Number </td>
+    <td width="200px"> Email * </td>
     <td> <input style="align:center;" /> </td>
   </tr>
   <tr>
-    <td width="200px"> Email </td>
+    <td width="200px"> City * </td>
     <td> <input style="align:center;" /> </td>
   </tr>
   <tr>
-    <td width="200px"> City </td>
-    <td> <input style="align:center;" /> </td>
-  </tr>
-  <tr>
-    <td width="200px"> State </td>
+    <td width="200px"> State *</td>
     <td> <input style="align:center;" /> </td>
   </tr>
   <tr>
@@ -81,5 +92,6 @@ body {
 <div class="g-recaptcha" data-sitekey="6LfceoAUAAAAAJeoNEMdfRh07gU3_a8uxJqZkt9R"></div>
 </br>
 </br>
-<button style="align:center;left:100px;width:100px;height:40px;" width="200px" height="30px">Submit</button>
+<button style="align:center;left:100px;width:100px;height:40px;" width="200px" onclick="validate()" height="30px">Submit</button>
+<h5 id="successHeader" /h5>
 </body>

@@ -38,7 +38,7 @@
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  padding: 100px 200px 10px;
 }
 
 
@@ -72,13 +72,14 @@
 	var app = angular.module('myApp', []);
 
 	app.controller('myCtrl', function($scope, $http) {
-		$scope.type='chairs';
+		$scope.type='lenins';
 	$http({method: 'GET', url: '/api/'+$scope.type}).then(function(response){
 	         $scope.urls=response.data;
 	    });
 			$scope.somefunc = function(type){
 				console.log('inside');
 				$scope.type=type;
+				$scope.images = ['c1.jpg','c2.jpg','c3.jpg']
 				$http({method: 'GET', url: '/api/'+$scope.type}).then(function(response){
 				         $scope.urls=response.data;
 				    });
@@ -90,10 +91,10 @@
 <body ng-app="myApp" ng-controller="myCtrl">
 
 	<div class="topnav">
-	  <a class="active" href="{% url 'home' %}">Home</a>
-	  <a href="{% url 'gallery' %}">Gallery</a>
-	  <a href="{% url 'about' %}">Contact</a>
-	  <a href="">Products</a>
+		<a class="active" href="{% url 'home' %}">Home</a>
+		<a href="{% url 'gallery' %}">Gallery</a>
+		<a href="{% url 'about' %}">Contact</a>
+		<a href="{% url 'productsview' %}">Products</a>
 	</div>
 
 	<div class="sidenav">
@@ -105,34 +106,31 @@
 
 <div class="main" >
 <div>
-
-
 	<header ng-repeat-start="item in urls">
-
 </header>
 
-<div class="body">
-	<img width="300" height="200" align="center" src="/static/ember/c1.jpg" />
+<div  class="body">
+	<img width="300" height="150" align="center" src="/static/ember/c1.jpg" />
+	<table>
+		<tr>
+			<td>
 	<h4 ng-bind="item.fields.name">  </h4>
-  <p ng-bind="item.fields.price"> </p>$
+</td>
+<td>-</td>
+<td>
+  <p ng-bind="item.fields.price+'$ '"> </p> </td>
+</tr>
+</table>
 </div>
 
 	<footer ng-repeat-end>
 		<a href="#0" class="cd-add-to-cart" ng-model="item" data-price="{{ item.fields.price}}">Add To Cart</a>
-	</br></br></br></br>
+	</br></br>
 
 	</footer>
 </div>
 
-<main>
-	<div id='this-is-bad'>
-		<p>---------------------------ss---------------------------------------------------------------------------------</p>
-	</div>
-	<h6>Add to Cart Interaction</h6>
-	<a href="#0" class="cd-add-to-cart" data-price="25.99">Add To Cart</a>
-	<h1>Add to Cart Interaction</h1>
-	<a href="#0" class="cd-add-to-cart" data-price="22.99">Add To Cart2</a>
-</main>
+
 
 <div class="cd-cart-container empty">
 	<a href="#0" class="cd-cart-trigger">
@@ -157,7 +155,7 @@
 			</div>
 
 			<footer>
-				<a href="#0" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
+				<a href="{% url 'checkout' %}" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
 			</footer>
 		</div>
 	</div> <!-- .cd-cart -->

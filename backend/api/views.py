@@ -27,3 +27,6 @@ class ProductsPageView(TemplateView):
 
 class CheckoutPageView(TemplateView):
     template_name = "checkout.html"
+
+class AddProductPage(TemplateView):
+    template_name = "addproducts.html"

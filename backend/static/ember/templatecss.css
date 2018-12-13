@@ -81,7 +81,7 @@ $L: 1170px;
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -117,7 +117,7 @@ a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -137,9 +137,9 @@ Modules - reusable parts of our design
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 
@@ -152,7 +152,7 @@ Main components
   /* slightly visible only when we resize this element */
   box-shadow: 0 0 40px rgba(#000, 0.8);
 
-  
+
 
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
@@ -454,7 +454,7 @@ Main components
     @include transition-delay(0s);
   }
 }
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -478,7 +478,7 @@ html, body {
 body {
   font-size: 100%;
   font-family: "Ubuntu", sans-serif;
-  background-color: #2e2d32;
+  background-color: #000000;
 }
 
 a {
@@ -486,7 +486,7 @@ a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -504,9 +504,9 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 #cd-main-content {
